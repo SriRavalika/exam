@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Write a function to reverse a string.
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+          }
+
+        console.log(reverseString("hello"));  // Output: "olleh"
+
+//2.Write a function to check if a string is a palindrome.
+function isPalindrome(str) {
+    return str.split("").reverse().join("");
+}
+console.log(isPalindrome("racecar")); // Expected output: true
+console.log(isPalindrome("hello")); // Expected output: false
+
+    </script>
+</body>
+</html>
