@@ -14,12 +14,295 @@
 
         console.log(reverseString("hello"));  // Output: "olleh"
 
-//2.Write a function to check if a string is a palindrome.
-function isPalindrome(str) {
-    return str.split("").reverse().join("");
-}
-console.log(isPalindrome("racecar")); // Expected output: true
-console.log(isPalindrome("hello")); // Expected output: false
+
+
+        //2.Write a function to check if a string is a palindrome.
+            function isPalindrome(str) {
+               return str.split("").reverse().join("");
+             }
+           console.log(isPalindrome("racecar")); // Expected output: true
+        console.log(isPalindrome("hello")); // Expected output: false
+      
+      
+      
+        //3.Write a function to find the maximum number in an array.
+            function findMax(arr) {
+                return Math.max(...arr);
+             }
+            console.log(findMax([3, 1, 4, 1, 5, 9])); // Expected output: 9
+
+
+
+            //4.Write a function to remove duplicates from an array.
+                function removeDuplicates(arr) {
+                    return [...new Set(arr)];
+                }
+             console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Expected output: [1, 2, 3, 4, 5]
+
+
+
+             //5.Write a function to find the factorial of a number.
+                 function factorial(n) {
+                     if (n === 0 || n === 1) {
+                          return 1;
+                     } else {
+                     return n * factorial(n - 1);
+                    }
+                  }
+                console.log(factorial(5)); // Expected output: 120
+
+
+
+                //6.Write a function to generate the Fibonacci series up to n terms.
+                      function fibonacci(n) {
+                        let fibSeries = [0, 1];
+                             while (fibSeries.length < n) {
+                                 fibSeries.push(fibSeries[fibSeries.length - 1] + fibSeries[fibSeries.length - 2]);
+                               }
+                          return fibSeries.slice(0, n);
+                       }
+                    console.log(fibonacci(5)); // Expected output: [0, 1, 1, 2, 3]
+
+
+
+                    //7.
+
+
+                    //8.Write a function to find the second largest number in an array.
+                           function secondLargest(arr) {
+                            if (arr.length < 2) {
+                                    return null; // or throw an error
+                                 }
+
+                               let max = -Infinity;
+                               let secondMax = -Infinity;
+
+                                for (let num of arr) {
+                                 if (num > max) {
+                                   secondMax = max;
+                                          max = num;
+                                 } else if (num > secondMax && num !== max) {
+                                          secondMax = num;
+                                    }
+                                  }
+                              return secondMax;
+                             }
+                            console.log(secondLargest([10, 20, 4, 45, 99])); // Expected output: 45
+
+
+
+                            //9.Write a function to find the missing number in an array.
+                                function findMissingNumber(arr) {
+                                    let n = arr.length + 1;
+                                         let sum = Math.floor(n * (n + 1) / 2);
+                                         let actualSum = arr.reduce((a, b) => a + b, 0);
+                                         return sum - actualSum;
+                                  }
+                                console.log(findMissingNumber([1, 2, 4, 5])); // Expected output: 3
+
+
+
+                            //10.Write a function to count the occurrences of each character in a string.
+                             function countOccurrences(str) {
+                                let charCount = {};
+                            for (let char of str) {
+                              if (charCount[char]) {
+                                    charCount[char]++;
+                             } else {
+                                 charCount[char] = 1;
+                              }
+                            }
+                              return charCount;
+                               }
+                        console.log(countOccurrences("hello")); // Expected output: { h: 1, e: 1, l: 2, o: 1 }
+
+
+
+                        //11.Write a function to flatten a nested array.
+                             function flattenArray(arr) {
+                                return arr.reduce((acc, current) => {
+                                return acc.concat(Array.isArray(current) ? flattenArray(current) : [current]);
+                               }, []);
+
+                               }
+                            console.log(flattenArray([1, [2, [3, 4], 5], 6])); // Expected output: [1, 2, 3, 4, 5, 6]
+
+
+                            //12.Write a function to implement a debounce function.
+                                 function debounce(func, delay) {
+                                     let timeoutId;
+                                     return function (...args) {
+                                          if (timeoutId) {
+                                          clearTimeout(timeoutId);
+                                           }
+                                          timeoutId = setTimeout(() => {
+                                                func(...args);
+                                           }, delay);
+                                          };
+                                        }
+
+
+
+                         //13.               
+
+
+                         //14.Write a function to find the longest word in a string.
+                                  function longestWord(str) {
+                                    let words = str.split(" ");
+                                      let longest = words.reduce((a, b) => a.length > b.length ? a : b);
+                                      return longest;
+
+                                   }
+                               console.log(longestWord("The quick brown fox jumps over the lazy dog")); // Expected output: "jumps"
+
+                                   
+
+
+                    //15.Write a function to find the intersection of two arrays.
+                               function arrayIntersection(arr1, arr2) {
+                                return arr1.filter(value => arr2.includes(value));
+                               }
+                              console.log(arrayIntersection([1, 2, 3], [2, 3, 4])); // Expected output: [2, 3]
+
+
+
+                     //16. Write a function to group array elements by a key.
+                     function groupByKey(arr, key) {
+                              return arr.reduce((acc, current) => {
+                              const groupKey = current[key];
+                              if (!acc[groupKey]) {
+                                   acc[groupKey] = [];
+                               }
+                              acc[groupKey].push(current);
+                                  return acc;
+                               }, {});
+                        }         
+
+
+
+                       // 17.Write a function to merge two sorted arrays.
+                               function mergeSortedArrays(arr1, arr2) {
+                                       return [...arr1, ...arr2].sort((a, b) => a - b);
+                               }
+                            console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // Expected output: [1, 2, 3, 4, 5, 6]
+
+
+
+                      // 18.
+                      
+                      
+
+
+
+
+
+                    //  Output Based - 
+                    //1,Find the output of the following code:
+                           console.log(1 + "2" + "2");//Output: "122"
+                           console.log(1 + +"2" + "2");//Output: "32"
+                           console.log(1 + -"1" + "2");//Output:"02"
+                           console.log(+"1" + "1" + "2");//Output: "112"
+                           console.log("A" - "B" + "2");//Output: "NaN2"
+                           console.log("A" - "B" + 2);//Output: "NaN"
+
+
+​
+                      //2.What will be the output of the following?
+                              console.log(0.1 + 0.2 === 0.3); //Output: false
+
+                       //3. What will be the output?
+                            let a = {};
+                            let b = { key: "b" };
+                            let c = { key: "c" };
+
+                            a[b] = 123;
+                            a[c] = 456;
+
+                          console.log(a[b]);
+
+​                           //output 456
+
+                         //4.What does this function return?
+                               function foo() {
+                                  return
+                                  {
+                                     name: "John"
+                                  };
+                               }
+                             console.log(foo())
+                          //output name: "john"
+
+
+
+                          //5.How do you make this work?
+
+                                function sum(a) {
+                                    return function(b) {
+                                         return function(c) {
+                                                    return a + b + c;
+                                         }
+                                  }
+                              }
+
+                                console.log(sum(2)(3)(4)); // Expected output: 9
+
+​
+                        //6.Implement a function that executes after a delay without using setTimeout.
+                            function delayExecution(func, delay) {
+                                const start = Date.now();
+                                 function recursiveDelay() {
+                                        if (Date.now() - start >= delay) {
+                                                  func();
+                                        } else {
+                                        recursiveDelay();
+                                         }
+                                      }
+                                  recursiveDelay();
+                                  }
+
+                              
+
+​
+                         //7.Create a polyfill for Array.prototype.map().
+                              Array.prototype.customMap = function(callback) {
+                                const result = [];
+                                    for (let i = 0; i < this.length; i++) {
+                                          result.push(callback(this[i], i, this));
+                                    }
+                                return result;
+                               };
+
+​
+                         //8.What will be the output?
+                             console.log(typeof NaN);
+                              //outut "number"
+
+
+
+                    //9.How to check if an object is empty in JavaScript?
+                                  function isEmpty(obj) {
+                                    return Object.keys(obj).length === 0;
+                                 }
+    
+    
+    
+                   //10.What will be the output?**
+    
+    
+                       function test() {
+                        console.log(a);
+                          var a = 5;
+                         console.log(a);
+                         }
+                        test();
+                       //output undefined       
+                       //  5
+
+
+
+
+
+
 
     </script>
 </body>
